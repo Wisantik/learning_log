@@ -2,7 +2,7 @@
 {% block content %}
   {% if form.errors %}
     <p>твой юзернеймdff и пароль залупа</p>
-    {% comment %} {{ form.errors }} {% endcomment %}
+    {{ form.errors }}
   {% endif %}
 
   <form method="post" action="{% url 'users:login' %}">

@@ -1,9 +1,11 @@
 from django.urls import path, include
-from django.contrib.auth import views as auth_views
+from django.contrib.auth import views
+from users import views
 
 app_name = 'users'
 urlpatterns = [
-    #включить url  авторизации по умолчанию
+    # включить url  авторизации по умолчанию
     path('', include('django.contrib.auth.urls')),
-    path('/logout/', auth_views.LogoutView.as_view(), name='logout'),
+
+    path('logout', views.logout_view, name='logout'),
 ]
