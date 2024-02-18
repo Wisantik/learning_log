@@ -1,10 +1,11 @@
 {% extends "learning_logs/base.html" %}
 
-{%block content%}
-<p>Learning Log<p>
+{%block page_header%}
+  <div class='jumbotron'>
+     <h1 class="display-3">Track your learning.</h1>
 
-<p>
-    Learning Log helps you take your dick as hard as you can
-<p>
-
-{%endblock content%}
+     <p class="lead">Make your own learning log, and keep a list of the penis о которых ты учишься, даже когда ты учишь что-то новое в пенисе и сделай entry суммаризируй свой пенис.</p>
+     <a class='btn btn-lg btn-primary' href="{% url "users:register" %}"
+        role="button">Register &raquo;</a>
+  </div>
+{%endblock page_header%}

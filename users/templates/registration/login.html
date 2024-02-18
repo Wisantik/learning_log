@@ -1,16 +1,21 @@
 {% extends 'learning_logs/base.html' %}
+{% load bootstrap4  %}
+{% block page_header %}
+  <h2>Войди в аккаунт</h2>
+{% endblock page_header %}
+
+
 {% block content %}
-  {% if form.errors %}
-    <p>твой юзернеймdff и пароль залупа</p>
-    {{ form.errors }}
-  {% endif %}
 
-  <form method="post" action="{% url 'users:login' %}">
-    {% csrf_token %}
-    {{ form.as_p }}
+    <form method="post" action="{% url 'users:login' %}" class="">
+      {% csrf_token %}
+      {{ form.as_p }}
+ 
+      <button name="submit" class="btn btn-primary">LOG IN</button>
 
-    <button name="submit">lLog in</button>
+
     <input type="hidden" name="next" 
     value="{% url 'learning_logs:index' %}" />
   </form>
-{% endblock %}
+
+{% endblock content %}
