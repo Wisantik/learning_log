@@ -5,7 +5,12 @@
      <h1 class="display-3">Track your learning.</h1>
 
      <p class="lead">Make your own learning log, and keep a list of the penis о которых ты учишься, даже когда ты учишь что-то новое в пенисе и сделай entry суммаризируй свой пенис.</p>
-     <a class='btn btn-lg btn-primary' href="{% url "users:register" %}"
+     {% if user.is_authenticated %}
+       <h1> вы вошли в свою учётную запись</h1>
+       {% else  %}
+       <a class='btn btn-lg btn-primary' href="{% url "users:register" %}"
         role="button">Register &raquo;</a>
+     {% endif %}
+     
   </div>
 {%endblock page_header%}
