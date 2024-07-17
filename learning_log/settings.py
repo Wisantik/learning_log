@@ -34,11 +34,11 @@ INSTALLED_APPS = [
     # мои приложения
     'users',
     'learning_logs',
-
+    "crispy_bootstrap4",
 
     # сторонние приложения
     'bootstrap4',
-
+    'crispy_forms',
 
     # приложения по умолчанию
     'django.contrib.admin',
@@ -48,6 +48,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 ]
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

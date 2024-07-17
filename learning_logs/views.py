@@ -22,7 +22,7 @@ def topics(request):
 
 
 @login_required
-def topic(request, topic_id):
+def topic(request, topic_id,):
     topic = Topic.objects.get(id=topic_id)
     # проверка того что тема принадлежит текущему пользователю
     if topic.owner != request.user:
@@ -82,3 +82,10 @@ def edit_entry(request, entry_id):
             return redirect('learning_logs:topic', topic_id=topic.id)
     context = {'entry': entry, 'topic': topic, 'form': form}
     return render(request, 'learning_logs/edit_entry.html', context)
+
+
+def delete_entry(request, entry_id):
+    entry = Entry.objects.get(id=entry_id)
+    if request.method == 'GET':
+        entry.delete()
+        redirect("learning_logs/topic.html")

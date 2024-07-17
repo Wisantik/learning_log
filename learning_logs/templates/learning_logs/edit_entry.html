@@ -5,6 +5,9 @@
 
 <p>Edit entry</p>
 
+<small><a href = "{% url "learning_logs:delete" entry.id %}">
+    DELETE</a></small>
+
 <form action="{% url 'learning_logs:edit_entry' entry.id %}" method='post'>
     {% csrf_token %}
     {{ form.as_p }}

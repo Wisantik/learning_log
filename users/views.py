@@ -9,11 +9,6 @@ def logout_view(request):
     return render(request, 'registration/logged_out.html')
 
 
-# def login_view(request):
-#     login(request)
-#     return render(request, 'registration/login.html', {'form': login.form})
-
-
 def register(request):
     # регистрирует нового пользователя
     if request.method != 'POST':
